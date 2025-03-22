@@ -1,0 +1,32 @@
+<div class="section">
+  <h2>Basic RxJS Concepts</h2>
+  
+  <div class="example">
+    <h3>1. Simple Observable</h3>
+    <button (click)="subscribeToSimpleObservable()">Subscribe</button>
+    <p>Results: {{ simpleResults.join(', ') }}</p>
+  </div>
+  
+  <div class="example">
+    <h3>2. HTTP Request Observable</h3>
+    <button (click)="loadUsers()">Load Users</button>
+    <ul>
+      <li *ngFor="let user of users">{{ user.name }} ({{ user.email }})</li>
+    </ul>
+  </div>
+  
+  <div class="example">
+    <h3>3. Creating New Observables</h3>
+    <input #nameInput placeholder="Name">
+    <input #emailInput placeholder="Email">
+    <button (click)="addUser(nameInput.value, emailInput.value)">Add User</button>
+  </div>
+  
+  <div class="example">
+    <h3>4. Async Pipe</h3>
+    <p>User Count: {{ (users$ | async)?.length }}</p>
+    <p *ngIf="latestNotification$ | async as notification">
+      Notification: {{ notification }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="section">
+  <h2>Intermediate RxJS Concepts</h2>
+  
+  <div class="example">
+    <h3>1. Pipe and Operators</h3>
+    <p>Active Users: {{ activeUsersCount }}</p>
+    <button (click)="filterActiveUsers()">Show Active Users</button>
+  </div>
+  
+  <div class="example">
+    <h3>2. Search with debounceTime & distinctUntilChanged</h3>
+    <input [formControl]="searchControl" placeholder="Search users...">
+    <div *ngIf="isSearching">Searching...</div>
+    <ul>
+      <li *ngFor="let user of searchResults">{{ user.name }}</li>
+    </ul>
+  </div>
+  
+  <div class="example">
+    <h3>3. Error Handling</h3>
+    <input #userIdInput type="number" placeholder="Enter user ID">
+    <button (click)="getUserById(userIdInput.value)">Fetch User</button>
+    <p *ngIf="selectedUser">
+      Found: {{ selectedUser.name }} ({{ selectedUser.email }})
+    </p>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </div>
+  
+  <div class="example">
+    <h3>4. Finite Observable with takeUntil & take</h3>
+    <button (click)="startCounter()">Start 5-second counter</button>
+    <button (click)="stopCounter()">Stop counter</button>
+    <p>Counter: {{ counterValue }}</p>
+  </div>
+</div>

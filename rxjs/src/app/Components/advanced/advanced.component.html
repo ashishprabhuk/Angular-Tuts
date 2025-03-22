@@ -1,0 +1,37 @@
+<div class="section">
+  <h2>Advanced RxJS Concepts</h2>
+  
+  <div class="example">
+    <h3>1. Caching with shareReplay</h3>
+    <button (click)="loadCachedUsers()">Load Cached Users</button>
+    <p>Cached Users: {{ cachedUsersCount }}</p>
+  </div>
+  
+  <div class="example">
+    <h3>2. Flattening Operators</h3>
+    <button (click)="demonstrateMergeMap()">MergeMap</button>
+    <button (click)="demonstrateConcatMap()">ConcatMap</button>
+    <button (click)="demonstrateSwitchMap()">SwitchMap</button>
+    <button (click)="demonstrateExhaustMap()">ExhaustMap</button>
+    <p>Processing results: {{ processingResults.join(', ') }}</p>
+  </div>
+  
+  <div class="example">
+    <h3>3. Click Stream with buffer</h3>
+    <button #clickButton>Click multiple times quickly</button>
+    <p>Detected {{ multiClickCount }} multi-clicks</p>
+  </div>
+  
+  <div class="example">
+    <h3>4. State Management</h3>
+    <p>User Statistics:</p>
+    <pre>{{ userStats | json }}</pre>
+    <button (click)="addRandomUser()">Add Random User</button>
+  </div>
+  
+  <div class="example">
+    <h3>5. Higher Order Mapping</h3>
+    <p>Total of User IDs: {{ userIdSum }}</p>
+    <button (click)="calculateUserIdSum()">Calculate Sum</button>
+  </div>
+</div>
